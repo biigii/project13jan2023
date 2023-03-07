@@ -1,97 +1,83 @@
-button {
-  margin: 20px;
-  width: 300px;
-  height: 60px;
-  font-size: 2em;
-  animation-duration: 400ms;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+html,
+body {
+  height: 100%;
 }
 
-button:hover {
-  /* animation-name: pulse; */
-  animation-name: shake;
+header,
+aside,
+main,
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* display: grid;
+  place-content: center; */
+
+  /* display: grid;
+  place-items: center; */
+
+  /* display: flex;
+  margin: auto; */
 }
 
-@keyframes shake {
-  from {
-    transform: skew(1deg, 1deg);
-  }
+header {
+  background-color: #e57878;
+  grid-area: my-header;
+}
 
-  to {
-    transform: skew(-1deg, -1deg);
+aside {
+  background-color: #83e167;
+  grid-area: my-aside;
+}
+
+main {
+  background-color: #59d5ee;
+  grid-area: my-main;
+}
+
+footer {
+  background-color: #c01c4d;
+  grid-area: my-footer;
+}
+
+body {
+  display: grid;
+  gap: 2px;
+}
+
+@media (min-width: 1800px) {
+  body {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 1fr 200px;
+    grid-template-areas:
+      'my-header   my-header'
+      'my-aside       my-main'
+      'my-footer     my-footer';
   }
 }
 
-@keyframes pulse {
-  from {
-    scale: 1;
-  }
-  to {
-    scale: 1.05;
+@media (min-width: 800px) and (max-width: 1800px) {
+  body {
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 100px 1fr 200px;
+    grid-template-areas: 
+    "my-header my-header my-header"
+    "my-aside     my-main     my-main"
+    "my-footer   my-footer  my-footer"
+    ;
   }
 }
 
-/* @keyframes something {
-  0% {
+@media (max-width: 800px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 2fr 200px;
+    grid-template-areas: 
+    "my-header"
+    "my-aside"
+    "my-main"
+    "my-footer"
+    ;
   }
-  10% {
-  }
-  50% {
-  }
-  100% {
-  }
-  0% {
-  }
-} */
-
-/* .box {
-  width: 100px;
-  height: 100px;
-  animation-name: sample;
-  animation-duration: 3s;
-  animation-iteration-count: 3;
-  animation-timing-function: ease-in-out;
-  animation-direction: alternate;
-  animation-fill-mode: backwards;
 }
-
-@keyframes sample {
-   from {
-    background-color: #ce1d1d;
-     translate: 0 0;
-     border-radius: 0;
-   }
-
-   to {
-    background-color: #2ad50f;
-     translate: 400px 400px;
-     border-radius: 50%;
-   }
-}
-
-
-@keyframes _sample {
-  /* from {
-    top: 0;
-    scale: 1;
-    rotate: 0deg;
-    background-color: #ce1d1d;
-  }
-  to {
-    top: 500px;
-    scale: 2;
-    rotate: 90deg;
-    background-color: #261ad1;
-  } */
-
-/* 0% {
-   top: 0;
-   left: 0;
-  }
-
-  100% {
-    top: 400px;
-    left: 400px;
-  } 
-} */
