@@ -1,0 +1,97 @@
+button {
+  margin: 20px;
+  width: 300px;
+  height: 60px;
+  font-size: 2em;
+  animation-duration: 400ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+button:hover {
+  /* animation-name: pulse; */
+  animation-name: shake;
+}
+
+@keyframes shake {
+  from {
+    transform: skew(1deg, 1deg);
+  }
+
+  to {
+    transform: skew(-1deg, -1deg);
+  }
+}
+
+@keyframes pulse {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.05;
+  }
+}
+
+/* @keyframes something {
+  0% {
+  }
+  10% {
+  }
+  50% {
+  }
+  100% {
+  }
+  0% {
+  }
+} */
+
+/* .box {
+  width: 100px;
+  height: 100px;
+  animation-name: sample;
+  animation-duration: 3s;
+  animation-iteration-count: 3;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  animation-fill-mode: backwards;
+}
+
+@keyframes sample {
+   from {
+    background-color: #ce1d1d;
+     translate: 0 0;
+     border-radius: 0;
+   }
+
+   to {
+    background-color: #2ad50f;
+     translate: 400px 400px;
+     border-radius: 50%;
+   }
+}
+
+
+@keyframes _sample {
+  /* from {
+    top: 0;
+    scale: 1;
+    rotate: 0deg;
+    background-color: #ce1d1d;
+  }
+  to {
+    top: 500px;
+    scale: 2;
+    rotate: 90deg;
+    background-color: #261ad1;
+  } */
+
+/* 0% {
+   top: 0;
+   left: 0;
+  }
+
+  100% {
+    top: 400px;
+    left: 400px;
+  } 
+} */
